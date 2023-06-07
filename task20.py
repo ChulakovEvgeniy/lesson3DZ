@@ -34,12 +34,13 @@ dictionary = {'AEIOULNSTRАВЕИНОРСТ': 1,
               'QZФЩЪ': 10}
 string_sum = ""
 word = input("Введите слово или фразу:")
-word = word.upper()
 result = 0
-for i in word:
+
+for i in word.upper():
     for key, val in dictionary.items():
         if i in key:
             result += val
             string_sum += str(val) + " + "
+
 print(string_sum[:-2], end="")
 print(f' = {result}')

@@ -18,3 +18,4 @@ for i in range(size):
 print(*my_list)
 
 print(f'{number} встречается {sum([int(number == my_list[i]) for i in range(len(my_list))])} раз')
+print(f'Число{number} встречается в списке {my_list.count(number)} раз')

@@ -8,21 +8,21 @@
 #     1 2 3 4 5
 #     6
 #     -> 5
-
+from random import randint
 size = int(input('Введите кол-во чисел: '))
 number = int(input('Введите число для проверки: '))
 
-num2 = 0
-
 my_list = list()
 for i in range(size):
-    my_list.append(i+1)
+    my_list.append(randint(0,100))
 
 print(*my_list)
+min_dist = float('inf')
+nearest = my_list[0]
 
-i = 0
-while number > my_list[i]:
-    num2 = my_list[i]
-    i += 1
+for item in my_list:
+    if abs(number-item)<min_dist:
+        min_dist = abs(number-item)
+        nearest = item
 
-print(num2)
+print(f'Ближайщее число к {number} будет {nearest}')
